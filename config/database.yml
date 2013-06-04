@@ -7,8 +7,9 @@
 development:
   adapter: postgresql
   host: localhost
-  username: user
+  username: soulwasher
   database: app-dev
+  password: pass
 
 #sqlite setup
 #development:
@@ -23,11 +24,13 @@ development:
 test:
   adapter: postgresql
   host: localhost
-  username: user
+  username: soulwasher
   database: app-test
+  password: pass
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  host: localhost
+  username: soulwasher
+  database: app-prod
+  password: pass
