@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  #protect_from_forgery
+  include SessionsHelper
+
+  # Force signout to prevent CSRF attacks
+  def handle_unverified_request
+    sign_out
+    super
+  end
+
   # Returns the full title on a per-page basis.
   def full_title(page_title)
     base_title = "Ruby on Rails Tutorial Sample App"

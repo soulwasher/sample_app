@@ -39,6 +39,8 @@ describe "User pages" do
 				expect { click_button submit }.to change(User, :count).by(1)
 				page { should have_selector('h1',    text: user.name) }
 				page { should have_selector('title', text: user.name) }
+				page { should have_selector('div.alert.alert-success', text: 'Welcome') }
+				page { should have_link('Sign out') }
 			end
 		end
 		
